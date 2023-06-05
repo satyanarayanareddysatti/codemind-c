@@ -1,37 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
 
-#include<stdio.h>
-int digicnt(int n)
-{
-    int r,k=0;
-    while(n>0)
-    {
-        r=n%10;
-        k++;
-        n=n/10;
-    }
-    return k;
-}
-int main()
-{
-    int n;
-    scanf("%d",&n);
-    int k=digicnt(n);
-    int x[k];
-    for(int i=k-1;i>=0;i--)
-    {
-        x[i]=n%10;
-        n=n/10;
-    }
-    for(int i=0;i<k;i++)
-    {
-        if(x[i]!=9)
-        {
-            x[i]=9;
+int maximum69Number(int num) {
+    char digits[10]; // Assuming the maximum number of digits is 10
+    int length = sprintf(digits, "%d", num);
+
+    for (int i = 0; i < length; i++) {
+        if (digits[i] == '6') {
+            digits[i] = '9';
             break;
         }
     }
-    for(int i=0;i<k;i++)
-    {
-        printf("%d",x[i]);
-    }
+
+    return atoi(digits);
+}
+
+int main() {
+    int num;
+    
+    scanf("%d", &num);
+
+    int max_num = maximum69Number(num);
+    printf("%d
+", max_num);
+
+    return 0;
 }
