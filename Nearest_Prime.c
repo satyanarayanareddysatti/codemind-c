@@ -1,54 +1,58 @@
 #include<stdio.h>
-int prm(int n)
+int prime(int n)
 {
-    int c=0,i;
-    for(i=1;i<n+1;i++)
+    int c=0;    
+    for(int i=1;i<=n;i++)
     {
         if(n%i==0)
         {
-            c++;
-        }
-    }
-    if(c==2)
-    {
-        return 1;
-    }
-    return 0;
+            c++;        
+         }
+ }
+                if(c==2) 
+                {
+                    return 1;
+                    }
+                    else
+                    { 
+                        return 0;
+                        }
 }
 int main()
 {
-    int n,i,a,b,j,l,c,d;
-    scanf("%d",&n);
-    for(i=1;i<n+1;i++)
-    {
-        scanf("%d",&a);
-        b=a;
-        for(l=a;l>1;l--)
+    int x,f,b;
+    scanf("%d",&x); 
+    for(int i=1;i<=x;i++)
+    { 
+        int n; 
+        scanf("%d",&n);     
+        for(int i=n;;i++)
         {
-            if(prm(l))
-            {
-                c=l;
+            if(prime(i))    
+            {                
+                f=i;                
                 break;
-            }
-        }
-        while(a)
-        {
-            if(prm(a))
-            {
-                d=a;
-                break;
-            }
-            a++;
-        }
-        if((b-c)<=(d-b))
-        {
-            printf("%d
-",c);
-        }
-        else
-        {
-            printf("%d
-",d);
-        }
-    }
-}
+                }
+     }
+                for(int i=n;;i--) 
+                { 
+                    if(prime(i))    
+                    {   
+                        b=i;            
+                        break;  
+                        }  
+                 }
+                        int d1=f-n;
+                        int d2=n-b; 
+                        if(d1<d2)
+                        {            
+                            printf("%d
+",f); 
+                            } 
+                            else if(d2<=d1)     
+                            {    
+                                printf("%d
+",b);   
+                                }
+                                }
+                                }
